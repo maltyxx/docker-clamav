@@ -27,12 +27,18 @@ docker run -d --name clamav --restart always -p 3310:3310 \
 
 ### Monitoring
 
+```bash
 docker exec -ti clamav clamdtop
+```
 
 ### Update virus database
 
+```bash
 docker exec -ti clamav freshclam
+```
 
 ### Scan on demande
 
+```bash
 docker exec -ti clamav clamscan -ri /
+```

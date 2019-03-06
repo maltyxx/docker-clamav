@@ -22,6 +22,7 @@ RUN apk add --no-cache \
 
 # Install clamav
 RUN cd /tmp \
+RUN cd /tmp \
     && wget https://www.clamav.net/downloads/production/clamav-${CLAMAV_VERSION}.tar.gz \
     && tar xvzf clamav-${CLAMAV_VERSION}.tar.gz \
     && cd clamav-${CLAMAV_VERSION} \
