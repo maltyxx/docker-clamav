@@ -54,6 +54,8 @@ RUN mkdir -pv \
 COPY --chown=clamav:clamav conf /etc/clamav
 COPY --chown=clamav:clamav docker-entrypoint.sh /
 
+RUN chmod 755 /docker-entrypoint.sh
+
 USER clamav
 
 VOLUME ["/etc/clamav", "/var/lib/clamav"]
