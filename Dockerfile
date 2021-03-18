@@ -2,7 +2,7 @@ FROM alpine:3
 
 LABEL maintainer="Yoann VANITOU <yvanitou@gmail.com>"
 
-ARG CLAMAV_VERSION=0.101.2
+ARG CLAMAV_VERSION=0.103.1
 
 ENV CLAMAV_CONFIG_PATH=/etc/clamav
 ENV CLAMAV_DATABASE_PATH=/var/lib/clamav
