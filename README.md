@@ -7,6 +7,12 @@ If you are interested, [check out](https://hub.docker.com/r/maltyxx/) my other ð
 
 ## Docker
 
+### Supported multi architectures
+
+- armv7 (arm32)
+- armv8 (arm64)
+- amd64 (x86_64)
+
 ### Volumes
 
 * config : Contains files config

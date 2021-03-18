@@ -1,10 +1,11 @@
-FROM alpine:3.9
+FROM alpine:3
 
 LABEL maintainer="Yoann VANITOU <yvanitou@gmail.com>"
 
 ARG CLAMAV_VERSION=0.101.2
-ARG CLAMAV_CONFIG_PATH=/etc/clamav
-ARG CLAMAV_DATABASE_PATH=/var/lib/clamav
+
+ENV CLAMAV_CONFIG_PATH=/etc/clamav
+ENV CLAMAV_DATABASE_PATH=/var/lib/clamav
 
 # Install clamav
 RUN apk add --no-cache \
@@ -51,10 +52,7 @@ RUN mkdir -pv \
       ${CLAMAV_CONFIG_PATH} \
       ${CLAMAV_DATABASE_PATH}
 
-COPY --chown=clamav:clamav conf /etc/clamav
-COPY --chown=clamav:clamav docker-entrypoint.sh /
-
-RUN chmod 755 -v /docker-entrypoint.sh
+ADD --chown=clamav:clamav rootfs/ /
 
 USER clamav
 
